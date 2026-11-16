@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Harsh Khanna – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#09090b; --panel:#131316; --panel2:#1b1b20; --ink:#f5f5f7; --muted:#a1a1aa; --line:#26262c;
+  --btn:#ffffff; --btn-ink:#09090b; --accent:#7aa7ff; --ok:#12331f; --ok-line:#1f5a37;
+  color-scheme:dark; box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f7f9; --panel:#ffffff; --panel2:#eef0f4; --ink:#0f172a; --muted:#55627a; --line:#dde2ea;
+    --btn:#0f172a; --btn-ink:#ffffff; --accent:#2457c5; --ok:#e6f6ec; --ok-line:#a8dbbb; color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f7f9; --panel:#ffffff; --panel2:#eef0f4; --ink:#0f172a; --muted:#55627a; --line:#dde2ea;
+  --btn:#0f172a; --btn-ink:#ffffff; --accent:#2457c5; --ok:#e6f6ec; --ok-line:#a8dbbb; color-scheme:light;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(5.5rem + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2rem)}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:5rem}
+.brand{font-weight:700;font-size:1.2rem;text-decoration:none}
+nav{display:flex;gap:2rem}
+nav a{text-decoration:none;color:var(--ink);font-weight:500}
+nav a:hover{color:var(--accent)}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:14px;font:600 1rem Inter,sans-serif;text-decoration:none;border:1px solid var(--line);background:var(--panel2);color:var(--ink);cursor:pointer}
+.btn.solid{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.btn:hover{filter:brightness(1.12)}
+
+section{padding:5rem 0 0}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding-top:4.5rem}
+.who{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.av{width:60px;height:60px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:1.2rem}
+.who small{display:block;color:var(--muted);line-height:1.2}
+.who strong{font-size:1.2rem;line-height:1.3}
+.pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.75rem}
+.pill{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:.4rem 1rem;font-size:.95rem;font-weight:500}
+h1{font-size:clamp(2.4rem,5.6vw,4.2rem);line-height:1.04;letter-spacing:-.03em;font-weight:700;margin:0 0 1.25rem}
+.lead{color:var(--muted);font-size:1.15rem;max-width:36rem;margin:0 0 1.75rem}
+.row{display:flex;flex-wrap:wrap;gap:.75rem}
+.small{margin-top:1.75rem;color:var(--muted);font-size:1rem}
+.small a{color:var(--accent);text-decoration:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:2rem}
+.card h3{margin:0;font-size:1.15rem;font-weight:600}
+.qp-head{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;color:var(--muted);font-size:.95rem}
+.qp-head h3{color:var(--ink)}
+.inner{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:1.25rem 1.4rem;margin-bottom:1rem}
+.inner:last-child{margin-bottom:0}
+.inner p{margin:0 0 .35rem;color:var(--muted)}
+.inner strong{font-weight:600;line-height:1.6;display:block}
+
+.head{display:flex;align-items:baseline;gap:1.25rem;margin-bottom:1.75rem}
+.head h2{margin:0;font-size:2rem;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+.head p{margin:0;color:var(--muted);white-space:nowrap}
+.head::after{content:"";flex:1;height:1px;background:var(--line);min-width:2rem}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:1.5rem}
+.about p{margin:0 0 1rem;max-width:40rem}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
+.edu{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.edu p{margin:.3rem 0 0;color:var(--muted)}
+.edu h3{font-size:1.3rem}
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:1.5rem}
+label{display:block;font-weight:500;margin-bottom:.4rem}
+input,textarea{width:100%;background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:.85rem 1.1rem;font:inherit}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+textarea{min-height:150px;resize:vertical}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{margin-bottom:1rem}
+.note{color:var(--muted);font-size:.92rem;margin:.4rem 0 1rem}
+.note.err{color:#ff8a8a}
+.direct a{display:block;text-decoration:none}
+.direct .inner.wa{background:var(--ok);border-color:var(--ok-line)}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.logos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.cert,.logo{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
+.cert h3,.logo h3{font-size:1.3rem;line-height:1.25}
+.cert p,.logo p{margin:0;color:var(--muted)}
+.cert .meta{font-size:.92rem;border-top:1px solid var(--line);padding-top:.75rem;width:100%;overflow-wrap:anywhere}
+.logo .btn{margin-top:auto}
+footer{margin-top:5rem;border-top:1px solid var(--line);padding:1.75rem 0;color:var(--muted);font-size:.92rem}
+
+@media (max-width:900px){
+  nav{display:none}
+  .hero,.two,.three,.contact-grid,.certs,.logos{grid-template-columns:1fr}
+  .head p{display:none}
+  .f2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Harsh Khanna</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#logos">Logo Designs</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn solid" href="#contact">Contact Me</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div>
+      <div class="who">
+        <div class="av" aria-hidden="true">HK</div>
+        <div><small>Hi, I’m</small><strong>Harsh Khanna</strong></div>
+      </div>
+      <div class="pills"><span class="pill">B.A., University of Rajasthan</span><span class="pill">Jaipur, India</span><span class="pill">Google Ads &amp; HubSpot certified</span></div>
+      <h1>Hard-working, sociable, and ready to grow with your team.</h1>
+      <p class="lead">I bring dedication, clear communication and a creative mindset, and I’m looking for an organization that offers room for advancement.</p>
+      <div class="row">
+        <a class="btn solid" href="#skills">See skills</a>
+        <a class="btn" href="mailto:hkhanna340@gmail.com">Email me</a>
+        <a class="btn" href="tel:+917891178303">Call me</a>
+      </div>
+      <p class="small">Email: <a href="mailto:hkhanna340@gmail.com">hkhanna340@gmail.com</a> &nbsp;|&nbsp; Phone: <a href="tel:+917891178303">7891178303</a></p>
+    </div>
+    <div class="card">
+      <div class="qp-head"><h3>Quick profile</h3><span>Open to opportunities</span></div>
+      <div class="inner"><p>Core skills</p><strong>Project Management, Public Relations, Teamwork, Time Management, Effective Communication, Critical Thinking</strong></div>
+      <div class="inner"><p>What I offer</p><strong>A dedicated work ethic, strong social skills, and the drive to learn and take on new challenges.</strong></div>
+      <div class="inner"><p>Languages</p><strong>English (Fluent), Hindi</strong></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="head"><h2>About</h2><p>A short intro and what I’m looking for.</p></div>
+    <div class="two">
+      <div class="card about">
+        <p>I’m Harsh Khanna from Jaipur. I studied for a B.A. at the University of Rajasthan (2022–2025), and I’m a dedicated, hard-working person with great social skills.</p>
+        <p>I’m looking to join a progressive organization where I can serve with my full capabilities, bring creativity to my work, and grow with the team.</p>
+      </div>
+      <div class="card">
+        <h3>Quick facts</h3>
+        <div class="inner" style="margin-top:1rem"><p>Based in</p><strong>Sanganer, Jaipur, Rajasthan</strong></div>
+        <div class="inner"><p>I work best with</p><strong>Freedom to work independently, and support from the team</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="head"><h2>Skills</h2><p>What I bring to a team.</p></div>
+    <div class="three">
+      <div class="card"><h3>Work</h3><div class="tags"><span class="pill">Project Management</span><span class="pill">Time Management</span><span class="pill">Public Relations</span></div></div>
+      <div class="card"><h3>People</h3><div class="tags"><span class="pill">Teamwork</span><span class="pill">Effective Communication</span><span class="pill">Critical Thinking</span></div></div>
+      <div class="card"><h3>Computing</h3><div class="tags"><span class="pill">RSCIT</span></div></div>
+      <div class="card"><h3>Digital marketing</h3><div class="tags"><span class="pill">Digital Marketing</span><span class="pill">Social Media Strategy</span><span class="pill">Content Strategy</span><span class="pill">SEO</span><span class="pill">Google Ads Search</span><span class="pill">Google Ads Display</span></div></div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="head"><h2>Certifications</h2><p>Digital marketing and advertising.</p></div>
+    <div class="certs">
+      <div class="card cert"><span class="pill">HubSpot Academy</span><h3>Digital Marketing Certified</h3><p>Covers SEO-friendly content, website optimization, social media strategy, video, advertising, and measuring results.</p><p class="meta">Valid May 14, 2026 – Jun 13, 2027<br>Code: 58068055d8f542d88087d5bbee076409</p></div>
+      <div class="card cert"><span class="pill">HubSpot Academy</span><h3>Social Media Certified</h3><p>Covers social monitoring, content strategy, engagement, social media policies, and showing social ROI to stakeholders.</p><p class="meta">Valid May 27, 2026 – Jun 25, 2028<br>Code: 2100a35a551e4bfd95b6cb1e45f851e2</p></div>
+      <div class="card cert"><span class="pill">Google Ads</span><h3>Google Ads Search Certification</h3><p>Google’s certification for Search advertising.</p><p class="meta">Issued Jun 9, 2026 – Expires Jun 9, 2027<br>Certificate ID: 184823961</p></div>
+      <div class="card cert"><span class="pill">Google Ads</span><h3>Google Ads Display Certification</h3><p>Google’s certification for Display advertising.</p><p class="meta">Issued Jun 8, 2026 – Expires Jun 8, 2027<br>Certificate ID: 184712769</p></div>
+    </div>
+  </section>
+
+  <section id="logos">
+    <div class="head"><h2>Logo Designs</h2><p>Brand work created in Canva.</p></div>
+    <div class="logos">
+      <div class="card logo"><h3>Logo design 1</h3><p>Logo created in Canva.</p><a class="btn solid" href="https://canva.link/469glu77m6cz74l" target="_blank" rel="noopener">View design</a></div>
+      <div class="card logo"><h3>Logo design 2</h3><p>Logo created in Canva.</p><a class="btn solid" href="https://canva.link/37jxiumr5d62yah" target="_blank" rel="noopener">View design</a></div>
+      <div class="card logo"><h3>Logo design 3</h3><p>Logo created in Canva.</p><a class="btn solid" href="https://canva.link/adhqz5vcmvjgh1k" target="_blank" rel="noopener">View design</a></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="head"><h2>Education</h2><p>My education background.</p></div>
+    <div class="card edu">
+      <div><h3>Bachelor of Arts (B.A.)</h3><p>University of Rajasthan, Jaipur</p></div>
+      <p>2022 – 2025</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="head"><h2>Contact</h2><p>Send me a message. I’ll reply as soon as possible.</p></div>
+    <div class="contact-grid">
+      <form class="card" id="f" novalidate>
+        <div class="f2">
+          <div class="field"><label for="n">Your name</label><input id="n" placeholder="Enter your name" autocomplete="name"></div>
+          <div class="field"><label for="e">Your email</label><input id="e" type="email" placeholder="you@email.com" autocomplete="email"></div>
+        </div>
+        <div class="field"><label for="s">Subject</label><input id="s" placeholder="Job opportunity"></div>
+        <div class="field"><label for="m">Message</label><textarea id="m" placeholder="Tell me about the opportunity…"></textarea></div>
+        <p class="note" id="note" role="status">Minimum 10 characters. Sending opens your email app with the message filled in.</p>
+        <button class="btn solid" type="submit">Send message</button>
+      </form>
+      <div class="card direct">
+        <h3>Direct contact</h3>
+        <a class="inner" style="margin-top:1rem" href="mailto:hkhanna340@gmail.com"><p>Email</p><strong>hkhanna340@gmail.com</strong></a>
+        <a class="inner" href="tel:+917891178303"><p>Phone</p><strong>7891178303</strong></a>
+        <a class="inner wa" href="https://wa.me/917891178303"><p>WhatsApp</p><strong>7891178303</strong></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Harsh Khanna</div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var n=document.getElementById('n').value.trim(),e=document.getElementById('e').value.trim(),
+      s=document.getElementById('s').value.trim()||'Portfolio enquiry',m=document.getElementById('m').value.trim(),
+      note=document.getElementById('note');
+  if(m.length<10){note.textContent='Please write a message of at least 10 characters.';note.className='note err';return;}
+  note.textContent='Opening your email app…';note.className='note';
+  var body=m+'\n\n— '+(n||'')+(e?' ('+e+')':'');
+  location.href='mailto:hkhanna340@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
